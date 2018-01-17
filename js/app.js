@@ -1,13 +1,12 @@
 
 //  ============Version Silvana ==========
+//Esta variable se ubicó globalmente porque se utilizara en cada una de las funciones posteriores.	
+var target = 0;
 
-// Debes poner siempre esta primera linea para cargar la página
+	// Debes poner siempre esta primera linea para cargar la página
 $(document).ready(function(){
 	var $botones = $(".control")
-	// console.log($botones);
-	var $titulo = $("h1");
 	$botones.click(cargarImagen);
-	var target = 0;
 })
 
 
@@ -26,12 +25,16 @@ var mostrarImagen = function (target) {
 	$newImage.addClass("active");
 }
 
-//Para cambiar color de botón como cambiamos de imagen
+//Para cambiar color del circulo conforme cambiamos de imagen
 var changeColorButton = function (target) {
 	// Extraemos la linea de HTML donde esta el boton
 	var $actualButton = $("button.active");
 	var $newButton = $("button[data-target=" + target + " ]");
 	$actualButton.removeClass("active");
 	$newButton.addClass("active");
+}
 
+//Para cambiar la imagen haciendo click en los controles laterales
+var skipImage = function (target) {
+	
 }
